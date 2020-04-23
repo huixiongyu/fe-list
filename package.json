@@ -1,0 +1,8 @@
+{
+  "name": "fe-list",
+  "version": "0.1.0",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
