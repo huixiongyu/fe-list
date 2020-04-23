@@ -1,7 +1,7 @@
 ---
 home: true
 lang: zh-CN
-heroText: 前端开发必备知识与实战
+heroText: 前端知识清单
 heroImage: /cube.jpg
 actionText: 开始 →
 actionLink: /core/
