@@ -127,7 +127,10 @@ module.exports = {
                 ''
             ]
         },
-        sidebarDepth: 1,
+        sidebarDepth: 2,
+        displayAllHeaders: true,
+        nextLinks: true,
+        prevLinks: true,
         lastUpdated: '更新时间', 
         docsDir: 'docs',
         editLinks: true,
