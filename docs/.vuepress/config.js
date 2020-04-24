@@ -10,10 +10,6 @@ module.exports = {
     ],
     themeConfig: {
         nav: [
-            {
-                text: '首页',
-                link: '/'
-            },
             { 
                 text: '核心知识',
                 link: '/core/',
@@ -30,10 +26,6 @@ module.exports = {
                     { text: 'PAT', link: '/datastructure/PAT/00-index' },
                     { text: 'leetcode', link: '/datastructure/leetcode/00-index' }
                 ]
-            },
-            {
-                text: '三日一题',
-                link: '/threedays/'
             },
             {
                 text: 'Node.js',
@@ -57,12 +49,6 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/': [
-                ''
-            ],
-            '/threedays/': [
-                ''
-            ],
             '/core/': [
                 '',
                 {
@@ -124,6 +110,9 @@ module.exports = {
                 ''
             ],
             '/weapp/': [
+                ''
+            ],
+            '/': [
                 ''
             ]
         },
