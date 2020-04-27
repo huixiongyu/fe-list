@@ -102,9 +102,7 @@ module.exports = {
             ],
             '/Vue/': [
                 '00-basic',
-                '01-vue',
-                '02-wechat',
-                '10-develop-rules'
+                '01-vue-develop'
             ],
             '/React/': [
                 ''
