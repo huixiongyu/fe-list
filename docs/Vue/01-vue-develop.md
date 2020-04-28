@@ -8,16 +8,16 @@
 
 相关链接：
 
-* [官方实例](https://echarts.apache.org/examples/zh/index.html) 
-* [上手教程]([https://echarts.apache.org/zh/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts](https://echarts.apache.org/zh/tutorial.html#5 分钟上手 ECharts))
-
-* [配置项手册](https://echarts.apache.org/zh/option.html#title) 实例中有属性配置不同可以在这里查找。
+* [官方实例](https://echarts.apache.org/examples/zh/index.html)
+* [上手教程](https://echarts.apache.org/zh/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts)
+* [配置项手册](https://echarts.apache.org/zh/option.html#title) 实例中的各种属性配置参数可以在这里查找。
 * [API文档](https://echarts.apache.org/zh/api.html#echarts)
 * [按需引用的清单](https://github.com/apache/incubator-echarts/blob/master/index.js)
 
-图表的使用，Echart、G2、F2、G6都是需要一个指定的id节点来给他们查找DOM的，然后创建实例之后通过API绘图，通过对象的属性来配置各种绘图参数，因此我们可以讲配置项(option对象)放在data里面，页面挂载之后实例调用options里的参数，根据图表的类型抽象成具体的组件，比如折线图组件、饼图组件、柱状图组件等。
+图表的使用，Echart、G2、F2、G6都是需要一个指定的id节点来给他们查找DOM的，然后创建实例之后通过API绘图，通过对象的属性来配置各种绘图参数，因此我们可以将配置项(option对象)放在data里面，页面挂载之后实例调用options里的参数，根据图表的类型抽象成具体的组件，比如折线图组件、饼图组件、柱状图组件等。
 
-**实例**
+**饼图实例**
+![pie-chart](https://huixiong.oss-cn-beijing.aliyuncs.com/fe-list/pie_chart_2020-04-28_10-47-16.png)
 
 安装：`npm i echarts`
 
@@ -179,9 +179,7 @@ export default {
 
 ```
 
-![pie-chart](https://huixiong.oss-cn-beijing.aliyuncs.com/fe-list/pie_chart_2020-04-28_10-47-16.png)
-
-按需引入可以减少很多文件的加载，下面用[webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)对比一下直接引入echart和按需的体积，从2.5M减少到了1.05M：
+按需引入可以减少很多文件的加载，下面用[webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)对比一下直接引入echart和按需的体积，从2.5M减少到了1.06M：
 
 ![before](https://huixiong.oss-cn-beijing.aliyuncs.com/fe-list/before_optimize_2020-04-28_10-01-58.png)
 
