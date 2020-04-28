@@ -187,5 +187,18 @@ export default {
 
 ![after](https://huixiong.oss-cn-beijing.aliyuncs.com/fe-list/after_optimize_2020-04-28_10-06-50.png)
 
+业务中我们通常希望图表数据为空时隐藏图表，可以通过动态绑定属性来实现，比如将没数据时给组件添加的类中属性opacity值为0, 有数据时值为1。另外可以考虑用v-show。
+
+```
+<template>
+	<pie-chart :class="[dataList.length === 0 ? 'hide' : '']" />
+<template>
+<style>
+	.hide{
+        opacity: 0;
+     }
+</style>
+```
+
 
 
