@@ -1,19 +1,14 @@
 <template>
   <div class="home">
-    <div id="main" style="width: 600px;height:400px;"></div>
-    <pie-chart />
+    dd
+    <!-- <div id="main" style="width: 600px;height:400px;"></div> -->
   </div>
 </template>
 
 <script>
-import echarts from 'echarts';
-import PieChart from '@/components/Charts/PieChart.vue';
-
+// import echarts from 'echarts';
 export default {
   name: 'Home',
-  components: {
-    PieChart,
-  },
   data() {
     return {
       option: {
@@ -39,13 +34,13 @@ export default {
     };
   },
   mounted() {
-    this.draw();
+    // this.draw();
   },
   methods: {
-    draw() {
-      const myChart = echarts.init(document.getElementById('main'));
-      myChart.setOption(this.option);
-    },
+    // draw() {
+    //   const myChart = echarts.init(document.getElementById('main'));
+    //   myChart.setOption(this.option);
+    // },
   },
 };
 </script>

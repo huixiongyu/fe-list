@@ -16,6 +16,12 @@ export default {
       type: String,
       default: '400px',
     },
+    // 图表标题
+    title: {
+      type: String,
+      default: '饼图',
+    },
+    // 图例列表
     legendData: {
       type: Array,
       default: () => [],
@@ -29,10 +35,11 @@ export default {
   data() {
     return {
       id: `chart${Math.floor(Math.random() * 10000)}-${Math.floor(Math.random() * 10000)}`,
-      instance: null, // 实例
+      chartInstance: null, // 实例
+      timer: '',
       option: {
         title: {
-          text: '某站点用户访问来源',
+          text: this.title,
           left: 'center',
         },
         tooltip: {
@@ -42,7 +49,7 @@ export default {
         legend: {
           orient: 'vertical',
           left: 'left',
-          data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+          data: this.legendData,
         },
         series: [
           {
@@ -50,13 +57,7 @@ export default {
             type: 'pie',
             radius: '55%',
             center: ['50%', '60%'],
-            data: [
-              { value: 335, name: '直接访问' },
-              { value: 310, name: '邮件营销' },
-              { value: 234, name: '联盟广告' },
-              { value: 135, name: '视频广告' },
-              { value: 1548, name: '搜索引擎' },
-            ],
+            data: this.dataList,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -70,12 +71,22 @@ export default {
     };
   },
   mounted() {
+    this.chartInstance = echarts.init(document.getElementById(this.id));
     this.drawChart();
+    window.addEventListener('resize', this.resize);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resize);
   },
   methods: {
     drawChart() {
-      const myChart = echarts.init(document.getElementById(this.id));
-      myChart.setOption(this.option);
+      this.chartInstance.setOption(this.option);
+    },
+    resize() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.chartInstance.resize();
+      }, 300);
     },
   },
 };

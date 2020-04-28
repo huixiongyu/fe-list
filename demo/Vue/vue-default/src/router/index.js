@@ -10,6 +10,11 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+  {
+    path: '/chart',
+    name: 'Chart',
+    component: () => import('@/views/Chart.vue'),
+  },
 ];
 
 const router = new VueRouter({
